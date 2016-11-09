@@ -1,7 +1,7 @@
-#HRMS
+# HRMS
 🎲 Project Details | CoManage - Company Management Application
 
-#visualforce page:
+# visualforce page:
 <apex:page sidebar="false" tabStyle="HRMS__c" controller="HRMSClass" applyBodyTag="true" applyHtmlTag="true">
   <apex:form >
       <apex:sectionHeader title="Human Resource Management System"/>
@@ -113,7 +113,7 @@ Smoking is prohibited within office premises. In order to maintain a clean and h
       </apex:form>
 </apex:page>
 
-#apex(controller):
+# apex(controller):
 public class HRMSClass 
 {
 
