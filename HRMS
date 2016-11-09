@@ -1,0 +1,130 @@
+#HRMS
+🎲 Project Details | CoManage - Company Management Application
+
+#visualforce page:
+<apex:page sidebar="false" tabStyle="HRMS__c" controller="HRMSClass" applyBodyTag="true" applyHtmlTag="true">
+  <apex:form >
+      <apex:sectionHeader title="Human Resource Management System"/>
+          <apex:pageBlock >
+              <center><apex:commandButton value="Login" action="{!myref}"/><apex:commandButton value="Print" action="{!myref1}"/></center>
+                  <apex:pageBlockSection columns="1">
+                  <center><h1 style="font-family:Calibri; font-size: 25px;">Company Policy and Procedure Manual (Employee Handbook)</H1></center><br></br>
+                  </apex:pageBlockSection>
+  
+<H1 style="font-family:Calibri; font-size: 20px;color:blue;">HR guidelines applicable for all permanent employees</H1><br></br><br></br>
+
+<Pre Style="font-family:Calibri;font-size:15px;white-space: pre-wrap;">
+<H2 style="font-size:20px">1. Code of Business Conduct and Ethics</H2>
+This Code of Business Conduct and Ethics applies to all employees and officers of the subsidiaries and affiliates of ABC Corp. Service Private Limited, which are referred to in this Code as Company or the Company. The Company is proud of its reputation for integrity and honesty and is committed to these core values. Personal responsibility is at the core of the Company’s principles and culture. The Company’s reputation depends on you maintaining the highest standards of conduct in all business endeavors. You have a personal responsibility to protect this reputation, to “do the right thing,” and to act with honesty and integrity in all dealings with customers, business partners and each other. You should not take unfair advantage of anyone through manipulation, concealment, abuse of privileged information, misrepresentation of material facts, or any other unfair-dealing practice. The principles set forth in this document describe how you should conduct yourself. This Code does not address every expectation or condition regarding proper and ethical business conduct. Good common sense is your best guide. It does not substitute for Company policies and procedures. In every business-related endeavour, you must follow the ethics and compliance principles set forth in this Code as well as all other applicable corporate policies and procedures. You are accountable for reading, understanding and adhering to this Code. Further, compliance with all laws, rules and regulations related to Company activities is mandatory and your conduct must be such as to avoid even the appearance of impropriety. Failure to do so could result in disciplinary action, up to and including termination of employment. If you are uncertain about what to do, refer to the relevant section of this Code. If you are still unsure, speak with your supervisor or, if you prefer, communicate with any of the other points of contact indicated. If you have any doubt, ask for help.<br></br>
+<H3 style="font-size:15px">1.1 In the Workplace</H3>
+Company is committed to providing a diverse and inclusive work environment, free of all forms of unlawful discrimination, including any type of harassment.
+<H3 style="font-size:15px">1.1.1 Respect</H3>
+The Company’s greatest strength lies in the talent and ability of its associates. Since working in partnership is vital to the Company’s continued success, mutual respect must be the basis for all work relationships. Engaging in behaviour that ridicules, belittles, intimidates, threatens or demeans, affects productivity, can negatively impact the Company’s reputation. You are expected to treat others with the same respect and dignity that any reasonable person may wish to receive, creating a work environment that is inclusive, supportive and free of harassment and unlawful discrimination.
+<H3 style="font-size:15px">1.1.2 Equal Employment Opportunity</H3>
+The talents and skills needed to conduct business successfully are not limited to any particular group of people. Company has a long-standing commitment to a meaningful policy of equal employment opportunity. The Company’s policy is to ensure equal employment and advancement opportunity for all qualified individuals without distinction or discrimination because of race, color, religion, gender, sexual orientation, age, national origin, disability, covered veteran status, marital status or any other unlawful basis. As part of this commitment, the Company will make reasonable accommodations for applicants and qualified employees.
+<H3 style="font-size:15px">1.1.3   Sexual Harassment and Other Discriminatory Harassment</H3>
+Sexual harassment and other discriminatory harassment are illegal and violate Company policies. Actions or words of a sexual nature that harass or intimidate others are prohibited. Similarly, actions or words that harass or intimidate based on race, color, religion, gender, sexual orientation, age, national origin, disability, covered veteran status, marital status or any other unlawful basis are also prohibited.<br></br>
+<H3 style="font-size:15px">1.2 Business Conduct Certification Program</H3>
+The responsibility for maintaining the Company’s reputation for integrity and compliance rests in large measure on associates who guide its operations and others in particularly sensitive positions. The Business Conduct Certification Program is designed to have you affirm your compliance with the standards contained in this Code and to help identify situations that may in fact, or in appearance, involve conflicts of interest or other improper conduct. If you are required to complete or update a Business Conduct Certificate, you must do so in a timely and forthright manner with accurate responses. Above all, you must remember that any act that gives the appearance of being improper can damage Company’s reputation and impair the public’s confidence in the Company. All such acts must be avoided.
+You must acknowledge that you have read and understand this Employee Code of Business Conduct and Ethics. In addition, management-level associates must periodically disclose on Business Conduct Certificate information that is considered to be directly relevant to avoiding problems with compliance obligations, self-dealing and impropriety. In certain circumstances, disclosure is required even if appropriate approval is obtained. An investigation may be conducted to resolve potential problems. All associates are required to cooperate in reaching a resolution of any issues found.<br></br>
+<H3 style="font-size:15px">1.3 Conflicts of Interest</H3>
+Company policy prohibits conflicts of interest. A “conflict of interest” occurs when your private interest interferes in any way with the interests of Company. In addition to avoiding conflicts of interest, you should also avoid even the appearance of a conflict. 
+<H3 style="font-size:15px">1.3.1 Corporate Opportunities</H3>
+You owe a duty to Company to advance its legitimate interests. You are prohibited from competing with the Company and from using corporate property, information or position for personal opportunities or gain. 
+<H3 style="font-size:15px">1.3.2 Outside Activities - Officer or Director of another business</H3>
+You may not serve as a director, officer, trustee, and partner or in any other principal position of another for-profit or publicly held organization or company without the prior approval of Company’s Chief Executive Officer (or a designee). You should obtain approval from Company’s Chief Executive Officer (or a designee) before agreeing to serve on the board or in a principal position of a trade or professional association or of a non-profit organization. In any event, these outside activities must not impact in any way your daily job responsibilities in your current position. 
+<H3 style="font-size:15px">1.3.3   Second Job</H3>
+Unless the Company otherwise consents in its sole discretion, you will devote your entire resources and full and undivided attention exclusively to the business of the Company during the term of your employment with the Company and shall not accept any other employment or engagement (honorary or otherwise).
+<H3 style="font-size:15px">1.3.4   Vendors, Suppliers and Consultants</H3>
+All vendors, suppliers and consultants shall be approved in accordance with Company policies and procedures. Company’s business relationships must be totally based on their ability to competitively meet the Company’s business needs. If your association with a current or prospective Company vendor, supplier or consultant is of a nature that gives rise, or potentially gives rise, to a conflict of interest, the Company may have to refrain from entering into the relationship and, in any event, you must not be involved in any way with approving, managing or influencing the Company’s business relationship.
+<H3 style="font-size:15px">1.3.5 Gifts and Entertainment</H3>
+The occasional exchange of inexpensive gifts and modest forms of entertainment that have no special significance attached and are reasonable in nature, frequency and cost, are normal in business and help build strong and trusting relationships with customers, suppliers and other business partners. However, receiving such gifts or entertainment must never affect your judgment or decision-making, nor should they be offered in return for favorable treatment from others.
+What constitutes good business practice with respect to gifts and entertainment varies by industry, business unit and location. Gifts from agents to individual insurance clients of other than de minimus value are generally regarded as “rebates” and as such are prohibited. No gifts to you valued at more than INR 2,500 would be allowed. Gifts to you valued between INR 1,000 and INR 2,500 or forms of business entertainment that exceed reasonable and customary practices should be politely declined, unless approved in advance by your functional head for sound business reasons. 
+<H3 style="font-size:15px">1.3.6 Communication of Conflicts</H3>
+All potential and actual conflicts of interest or material transactions or relationships that reasonably could be expected to give rise to such a conflict or the appearance of such a conflict must be disclosed. If you have any doubt about whether a conflict of interest exists after consulting this Code, you should seek assistance from the appropriate persons or entities identified in the Resources section, so that you can make that determination. 
+Company and its associates will not directly or indirectly engage in bribery, kickbacks, payoffs or other corrupt business practices, in their relations with governmental agencies or customers.<br></br>
+<H3 style="font-size:15px">1.4 Protection and Proper Use of Company Assets</H3>
+Safeguarding and appropriately using Company assets, whether those assets take the form of paper files, electronic data, computer resources, trademarks or otherwise, is critical.
+<H3 style="font-size:15px">1.4.1 Confidentiality</H3>
+Company is committed to preserving customer and employee trust. All information, whether it is business, customer or employee-related, must be treated in a confidential manner, and disclosing it is limited to those people who have an appropriate business or legal reason to have access to the information. You need to take special precautions when transmitting information via e-mail, fax, the Internet or other media. Remember to treat all such communications as if they were public documents and printed on letterhead.
+In addition, Company meetings are confidential. You may not use audio or video equipment to record these meetings without the specific prior authorization of the head of your department.
+<H3 style="font-size:15px">1.4.2 Technology</H3>
+Safeguarding computer resources is critical because the Company relies on technology to conduct daily business. Software is provided to enable you to perform your job and is covered by federal copyright laws. You cannot duplicate, distribute or lend software to anyone unless permitted by the license agreement.
+Company provides electronic mail (e-mail) and Internet access to assist and facilitate business communications. All information stored, transmitted, received, or contained in these systems is the Company’s sole property and is subject to its review at any time. All e-mail and Internet use must be consistent with Company’s policies, practices and commitment to ensuring a work environment where all persons are treated with respect and dignity. Because these systems provide access to a worldwide audience, you should act at all times as if you are representing Company to the public, and should preserve Company’s system security and protect its name and trademarks.
+You must act responsibly and adhere to all laws and Company policies when using e-mail or the Internet.
+You must use your computer appropriately in accordance with Company standards and be sure to secure both the computer and all data from loss, damage or unauthorized access, reporting all instances of unauthorized access to the Information Technology Department.<br></br>
+<H3 style="font-size:15px">1.5 Administration</H3>
+<H3 style="font-size:15px">1.5.1 Reporting of Any Illegal or Unethical Behavior; Points of Contact</H3>
+If you are aware of any illegal or unethical behavior or if you believe that an applicable law, rule or regulation or this Code has been violated, the matter must be promptly reported to your supervisor or company executives.  
+Your supervisor is normally the first person you should contact if you have questions about anything in this Code or if you believe Company or an associate is violating the law or Company policy or engaging in conduct that appears unethical. Under some circumstances, it may be impractical or you may feel uncomfortable raising a matter with your supervisor. In those instances, you may contact the head of your department or any other company executives. Furthermore, you should take care to report violations to a person who you believe is not involved in the alleged violation. All reports of alleged violations will be promptly investigated and, if appropriate, remedied, and if legally required, immediately reported to the proper governmental authority.
+You will be expected to cooperate in assuring that violations of this Code are promptly addressed. Company has a policy of protecting the confidentiality of those making reports of possible misconduct to the maximum extent permitted by law. In no event will there be any retaliation against someone for reporting an activity that he or she in good faith believes to be a violation of any law, rule, regulation, internal policy or this Code. Any supervisor intimidating or imposing sanctions on someone for reporting a matter will be disciplined up to and including termination.
+
+<H2 style="font-size:20px">2.  Terms of Employment</H2>
+
+<H3 style="font-size:15px;">2.1 Terms of employment</H3>
+Terms of employment are as set out in the appointment letter. 
+2.1.1 The terms of employment are as per the details contained in the appointment letter.  The company reserves the right to amend, alter, change any or all the terms and conditions governing employment.  The company will also be the sole judge of the meaning and interpretation of all or any of these terms and conditions and its decision thereon shall be binding on all employees.
+2.1.2 The employment contract is a contract between the individual employee and the company and the terms of contract are individual to each employee. Hence, all employees are required not to share the terms of contract with others including fellow employees.<br></br>
+<H3 style="font-size:15px;">2.2 Joining process</H3>
+ The copies of the following documents shall be submitted by an employee on the date of joining:
+    • Proof of age (birth certificate/school leaving certificate/passport copy);
+    • Duly Attested Educational and other qualification certificates;
+    • Release letter from the previous employer (if applicable);
+    • Acknowledgement for receipt of the HR Policies and Code of Conduct guidelines;
+Appointment letter: 
+Original to be retained by the employee; and one signed copy to be handed over to Company by the employee (for the Employee file)<br></br>
+<H2 style="font-size:20px">3.  General Administrative Matters</H2><br></br>
+<H3 style="font-size:15px;">3.1 Working days</H3>
+The working days at the Company will be from Monday through Friday.
+Unless otherwise stated, work hours would be as follows:
+Days:    Monday – Friday
+Timings: 0900 hrs To 1800 hrs.
+Lunch-break: 60 minutes
+Owing to work exigencies, an employee’s working hours maybe different from the timings mentioned above.<br></br>
+<H3 style="font-size:15px;">3.2 Weekly off</H3>
+Saturday and Sunday will be the weekly holidays.
+Owing to work exigencies, an employee may also be required to work either on a weekly off or a public holiday.  In such a case, and after obtaining due approval from his/her immediate manager, the employee is entitled to take any of the weekdays in the following week as a compensatory off in lieu of the day of the weekly off/public holiday.<br></br>
+<H3 style="font-size:15px;">3.3 Late arrival</H3>
+Employees are expected to arrive at work and for meetings on time.  If an employee anticipates late arrival he/she must inform the immediate manager (or a colleague in case the immediate manager is not available) in advance to allow for schedule changes and to handle coverage of working hours. Repeat challenges with late arrivals will be recorded as misconduct in the employee’s file. All employees working with customers must ensure that all meeting commitments are met on time. Lapses in punctuality will not be acceptable. 
+<H3 style="font-size:15px;">3.4 Absence from office</H3>
+•   Any employee, who is outside the office during working hours, should ensure that the immediate manager (or a colleague, if the immediate manager is not available) is aware of his/her whereabouts.  
+•   Unauthorized absence from office, or absence from office without prior approval from the immediate manager, will be recorded as misconduct in the employee’s file. 
+•   Unauthorized absence will be treated as Loss of Pay (LOP).<br></br>
+<H3 style="font-size:15px;">3.5 Telecommuting</H3>
+•   Any employee who is unable to make it into the office premise can request to work from home.
+•   Employee needs to ensure they have all the appropriate equipment (functioning laptop) and content required to be fully productive working from home. If this is not the case, they will need to come into the office. 
+•   Requests to work from home more than 1 day a week need to be approved by the supervisor/manager. 
+•   Employee needs to ensure that they are accessible via phone and instant messenger throughout the work day.
+•   Unproductive days may be treated as Loss of Pay (LOP). <br></br>
+<H3 style="font-size:15px;">3.6 Housekeeping</H3>
+It will be the responsibility of all employees to ensure that the offices of the company are kept neat and tidy at all times.  The work area should be cleared of all files and papers every evening prior to leaving the office. Computers and any lights in the work area need to be switched off.<br></br>
+<H3 style="font-size:15px;">3.7 Dress code</H3>
+
+Men/Women
+Formal / smart casual shirts, trousers and shoes. 
+Formal clothes are mandatory for sales personnel; and others when meeting customers / visitors. Formal Western( shirts, slacks, pants, suits)/
+Indian (saree, salwar) business wear
+
+Employees are expected to use their discretion in determining what appropriate office wear is.<br></br>
+<H3 style="font-size:15px;">3.8 Smoking</H3>
+Smoking is prohibited within office premises. In order to maintain a clean and healthy atmosphere in the workplace and arising out of our concern for fellow employees, smoking is prohibited within the office premises.</Pre>
+
+            </apex:pageBlock>       
+      </apex:form>
+</apex:page>
+
+#apex(controller):
+public class HRMSClass 
+{
+
+public Pagereference myRef()
+    {
+    PageReference ref = new PageReference('/apex/HRMSlogin');
+    return ref;
+    }
+public Pagereference myRef1()
+    {
+    PageReference ref = new PageReference('/apex/HRMSloginprint');
+    return ref;
+    }
+}
