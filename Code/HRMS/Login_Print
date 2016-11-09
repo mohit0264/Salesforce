@@ -1,0 +1,160 @@
+# HRMS Login
+
+#visualforce Page:
+
+<apex:page sidebar="false" standardController="HRMS__c" extensions="HRMSloginClass">
+  <apex:form >
+      <apex:sectionHeader title="Human Resource Management System"/>
+      <style>
+      .activeT{background-color:black; color:black; font-family:"Calibri"; font-size: 20px;text-align: center;font-weight: bold;}
+      .inactiveT{background-color:black; color:black; font-size: 15px; font-family:"Calibri";text-align: center;font-weight: bold;}
+     select {
+     color: #000;
+     position: relative;
+     top: 0px;
+     right: -600px;
+     font-size: 15px;
+     }
+     body .btn {
+     font-size: 15px;
+     color:black;
+     }
+     .TableStyle{font-size:15px;}
+     .THStyle{font-size:17px;}
+     </style>
+          <apex:tabPanel activeTabClass="activeT" inactiveTabClass="inactiveT" height="10" >  
+              <apex:tab label="Employees">
+              <apex:pageBlock >
+              <center><apex:commandButton action="{!myNewEmployee}" value="Add New Employee"/>
+              
+                <apex:selectList value="{!Homepicklist}" size="1" title="Order By">
+                <apex:selectOption itemLabel="---None---"  itemValue="---None---" />
+                <apex:selectOption itemLabel="Recently Created"  itemValue="Recently Created" />
+                <apex:selectOption itemLabel="Recently Modified"  itemValue="Recently Modified" />
+                <apex:selectOption itemLabel="Recently Viewed" itemvalue="Recently Viewed" />
+                <apex:actionSupport event="onchange" reRender="table"/>
+                </apex:selectList>  
+              </center>
+               <apex:pageBlockSection columns="1" >
+               <apex:pageBlockTable value="{!filter}" var="cont" id="table" headerClass="THStyle">
+               <apex:column >
+               <apex:outputLink value="https://ap2.salesforce.com/{!cont.name}" styleClass="TableStyle">view</apex:outputLink>(Edit/Del)
+               </apex:column>
+               <apex:column value="{!cont.First_Name__c}" styleClass="TableStyle"/>
+               <apex:column value="{!cont.Designation__c}" styleClass="TableStyle"/>
+               <apex:column value="{!cont.Phone__c}" styleClass="TableStyle"/> 
+               <apex:column value="{!cont.Email__c}" styleClass="TableStyle"/>
+               <apex:column value="{!cont.Reporting_Manager__c}" styleClass="TableStyle"/>               
+               </apex:pageBlockTable>
+               </apex:pageBlockSection>  
+              </apex:pageBlock>
+              </apex:tab>
+              <apex:tab label="Holidays">
+              </apex:tab>
+              
+              <apex:tab label="Leave Applications">
+              </apex:tab>
+              
+              <apex:tab label="Recruitment">
+              </apex:tab>
+              
+              <apex:tab label="Performance Management">
+              </apex:tab>
+              
+          </apex:tabPanel>
+  </apex:form>
+</apex:page>
+
+# apex(controller):
+
+public class HRMSloginClass {
+ public HRMSloginClass (ApexPages.StandardController controller) {
+
+    }
+    public List<HRMS__c> HRMSData{get;set;}
+    public String Homepicklist{get;set;}
+    public string contactId {get; set;}
+    public Pagereference myNewEmployee()
+    {
+    PageReference ref = new PageReference('/apex/AddNewEmployee');
+    return ref;
+    }
+     public List<HRMS__C> getfilter(){
+     List<HRMS__c> HRMSData = new List<HRMS__C>();
+     if(Homepicklist == 'Recently Created'){
+         HRMSData = [SELECT First_name__c,Phone__c,Email__c,Designation__c,Reporting_Manager__c,Name FROM HRMS__c ORDER BY CreatedDate ASC LIMIT 30];
+         
+         }
+         Else If(Homepicklist == 'Recently Modified'){
+         HRMSData = [SELECT First_Name__c,Phone__c,Email__c,Designation__c,Reporting_Manager__c,Name FROM HRMS__c ORDER BY LastmodifiedDate ASC LIMIT 30];
+        
+         }
+         Else If(Homepicklist == 'Recently viewed'){
+         HRMSData = [SELECT First_name__c,Phone__c,Email__c,Designation__c,Reporting_Manager__c,Name FROM HRMS__c ORDER BY LastViewedDate ASC LIMIT 30];
+         
+         }
+         Else{
+         HRMSData = [SELECT First_name__c,Phone__c,Email__c,Designation__c,Reporting_Manager__c,Name FROM HRMS__c ORDER BY Name ASC LIMIT 30];
+     }
+     return HRMSData;
+     }
+        public PageReference gotoHRMSDetailPage()
+    {
+        return new PageReference('/apex/HRMSDetailPage?id=' + contactId);
+    }
+     
+}
+----------------------------------------------------------------
+# Add New Employee
+
+# visualforce page:
+
+<apex:page sidebar="false" tabStyle="HRMS__c" applyBodyTag="true" applyHtmlTag="true" docType="html-5.0" standardController="HRMS__c" extensions="AddNewEmployeeClass">
+  <apex:form >
+      <apex:sectionHeader title="New Employee"/>
+<style>
+      body .btn {
+    position: relative;
+    top: -35px;
+    left: -60px;
+}
+</style>
+        <apex:pageBlock title="Add Details">
+        <center><apex:commandButton action="{!save}" value="Save"/><apex:commandButton action="{!mycancelb}" value="Cancel"/></center>
+        <apex:pageBlockSection collapsible="true" columns="2" title="General Information" showHeader="false">
+        <apex:inputField value="{!HRMS__c.Department__c}"/>
+        <apex:inputField value="{!HRMS__c.Designation__c}"/>
+        <apex:inputField value="{!HRMS__c.Reporting_Manager__c}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection collapsible="true" columns="2" title="Personal">
+        <apex:inputField value="{!HRMS__c.First_Name__c}"/>
+        <apex:inputField value="{!HRMS__c.Last_Name__c}"/>
+        <apex:inputField value="{!HRMS__c.PPhone__c}"/>
+        <apex:inputField value="{!HRMS__c.Email__c}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection collapsible="true" columns="2" title="Address">
+        <apex:inputField value="{!HRMS__c.Street__c}"/>
+        <apex:inputField value="{!HRMS__c.City__c}"/>
+        <apex:inputField value="{!HRMS__c.State__c}"/>
+        <apex:inputField value="{!HRMS__c.Country__c}"/>
+        <apex:inputField value="{!HRMS__c.Zip_Code__c}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection collapsible="true" columns="2" title="Other">
+        <apex:inputField value="{!HRMS__c.Education__c}"/>
+        <apex:inputField value="{!HRMS__c.Experience__c}"/>
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+  </apex:form>
+</apex:page>
+
+# apex(controller):
+
+public class AddNewEmployeeClass {
+    public AddNewEmployeeClass(ApexPages.StandardController controller) {
+    }
+    public Pagereference mycancelb(){
+    PageReference ref = new PageReference('/apex/HRMSlogin');
+    return ref;
+}
+}
+
